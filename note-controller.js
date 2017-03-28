@@ -1,6 +1,6 @@
 function getDiv() {
   var element = document.getElementById("app")
-  console.log(element)
+  element.innerHTML = "Howdy" // innerHTML completely replaces the contents of the element we called it on. 
 }
 
 getDiv();
