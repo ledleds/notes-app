@@ -12,10 +12,10 @@
     this.noteList.addNote(text)
   };
 
-  // NoteController.prototype.getHTML = function() {
-  //   var element = document.getElementById("app");
-  //   element.innerHTML = this.noteListView.generateHTML();
-  // };
+  NoteController.prototype.insertHTML = function(element) {
+    var element = document.getElementById("app");
+    element.innerHTML = this.noteListView.generateHTML();
+  };
 
   exports.NoteController = NoteController;
 })(this);
