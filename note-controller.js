@@ -14,10 +14,8 @@
 
   NoteController.prototype.getHTML = function() {
     var element = document.getElementById("app");
-    console.log(element)
     element.innerHTML = this.noteListView.generateHTML();
   };
-
 
   exports.NoteController = NoteController;
 })(this);
