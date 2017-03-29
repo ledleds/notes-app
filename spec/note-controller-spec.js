@@ -1,6 +1,8 @@
 function noteControllerCanBeInstantiated(){
-  var noteList = new NoteList();
-  var noteController = new NoteController(noteList);
+  function NoteListDouble(){};
+
+  var noteListDouble = new NoteListDouble();
+  var noteController = new NoteController(noteListDouble);
   assert.isTrue(noteController instanceof NoteController, "Object isn't an instance of NoteController")
 };
 
@@ -24,4 +26,14 @@ function noteControllerCanAddNotesToList() {
   assert.isTrue(noteListDouble.noteCallCount === 1, "Note has not been added")
 }
 
-noteControllerCanAddNotesToList();
+// noteControllerCanAddNotesToList();
+//
+// function passingDocumentToHtml() {
+// var noteList = new NoteList();
+// var noteController = new NoteController(noteList);
+// var dummyElement = document.createElement('div id="app"');
+// console.log(dummyElement)
+//
+// };
+//
+// passingDocumentToHtml();
