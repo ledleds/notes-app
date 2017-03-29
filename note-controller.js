@@ -1,5 +1,5 @@
+"use strict";
 (function(exports) {
-
   function NoteController(noteList) {
     this.noteList = noteList
   }
@@ -8,19 +8,16 @@
     this.noteListView = new NoteListView(this.noteList)
   };
 
-  NoteController.prototype.addNoteToList = function () {
-    this.noteList.addNote("Favourite drink: gin")
+  NoteController.prototype.addNoteToList = function(text) {
+    this.noteList.addNote(text)
   };
 
   NoteController.prototype.getHTML = function() {
-    var element = document.getElementById("app")
-    element.innerHTML = this.noteListView.generateHTML()
+    var element = document.getElementById("app");
+    console.log(element)
+    element.innerHTML = this.noteListView.generateHTML();
   };
-  exports.NoteController = NoteController
-})(this);
 
-var noteList = new NoteList();
-var noteController = new NoteController(noteList);
-noteController.addNoteToList();
-noteController.createNoteListView();
-noteController.getHTML();
+
+  exports.NoteController = NoteController;
+})(this);
