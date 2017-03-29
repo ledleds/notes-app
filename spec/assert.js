@@ -13,6 +13,13 @@ var assert = {
     } else {
       console.log("Woo, so equal")
     }
-  }
+  },
 
+  contains: function(haystack, needle) {
+    if (!haystack.includes(needle)) {
+      throw new Error ("Expected " + needle + " to be within " + haystack + ", but it was not.")
+    } else {
+      console.log("Oh YEAH, '" + needle + "' is in there.")
+    }
+  }
 };

@@ -1,8 +1,8 @@
 function savesNoteToNotes() {
 
   var note = new Note("Hello");
-  
-  assert.isTrue(note.viewNote() === "Hello");
+
+  assert.contains( "Hello", note.viewNote());
 };
 
 savesNoteToNotes();
