@@ -5,5 +5,14 @@ var assert = {
     } else {
       console.log("Your test: " + assertionToCheck + " passed")
     }
+  },
+
+  isEqual: function(expected, actual) {
+    if (expected !== actual) {
+      throw new Error ("Expected " + expected + " but got " + actual + ".")
+    } else {
+      console.log("Woo, so equal")
+    }
   }
+
 };
