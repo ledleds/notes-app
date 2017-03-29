@@ -12,7 +12,7 @@ function noteControllerCanAddNotesToList() {
   };
 
   NoteListDouble.prototype = {
-    createNote: function() {
+    addNote: function() {
       this.noteCallCount++;
     }
   };
@@ -20,8 +20,8 @@ function noteControllerCanAddNotesToList() {
   var noteListDouble = new NoteListDouble();
   var noteController = new NoteController(noteListDouble);
 
-  noteListDouble.createNote("Hello")
+  noteController.addNoteToList("Hello")
   assert.isTrue(noteListDouble.noteCallCount === 1, "Note has not been added")
 }
 
-noteControllerCanGetHTML();
+noteControllerCanAddNotesToList();
