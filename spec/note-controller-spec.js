@@ -23,13 +23,34 @@ test({
 
     noteController.addNoteToList("Hello")
     assert.isTrue(noteListDouble.noteCallCount === 1, "Note has not been added")
-  }
+  },
 
-// passingDocumentToHtml: function() {
-// var noteList = new NoteList();
-// var noteController = new NoteController(noteList);
-// var dummyElement = document.createElement('div id="app"');
-// console.log(dummyElement)
-//
-// };
+  passingDocumentToHtml: function() {
+    function dummyElement(){
+      this.innerHTML = ''
+    };
+
+    function NoteListDouble(){};
+    NoteListDouble.prototype = {
+      viewNotes: function() {
+        return 'YO';
+      }
+    };
+
+    function NoteListViewDouble(){};
+    NoteListViewDouble.prototype = {
+      generateHTML: function() {
+        return "<ul><li><div>" + "YO" + "</div></li></ul>"
+      }
+    };
+
+    var dummyElement = new dummyElement
+    var noteController = new NoteController(NoteListDouble);
+    var noteListViewDouble = new NoteListViewDouble(NoteListDouble);
+
+    noteController.createNoteListView(noteListViewDouble)
+    noteController.insertHTML(dummyElement)
+
+    assert.isEqual("<ul><li><div>YO</div></li></ul>", dummyElement.innerHTML)
+  }
 })

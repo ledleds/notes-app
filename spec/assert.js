@@ -3,7 +3,7 @@ var assert = {
     if (!assertionToCheck) {
       throw new Error (errorMessage);
     } else {
-      console.log("Oh yeah...so true")
+      console.log("%cOh so true", "color: #28B463")
     }
   },
 
@@ -11,7 +11,7 @@ var assert = {
     if (expected !== actual) {
       throw new Error ("Expected " + expected + " but got " + actual + ".")
     } else {
-      console.log("Wooo, so equal.")
+      console.log("%cWooo, so equal.", "color: #0097A7")
     }
   },
 
@@ -19,7 +19,7 @@ var assert = {
     if (!haystack.includes(needle)) {
       throw new Error ("Expected " + needle + " to be within " + haystack + ", but it was not.")
     } else {
-      console.log("Oh YEAH, '" + needle + "' is in there.")
+      console.log("%cOh YEAH, '" + needle + "' is in there.", "color: #E91E63")
     }
   }
 };
