@@ -2,7 +2,7 @@ function NoteListDouble() {};
 
 NoteListDouble.prototype = {
   viewNotes: function() {
-    return ["Patate is the French word for potato!", "Potato is the English word for patate"]
+  return [{note: "Patate is the French word for potato!", id: 0}, {note: "Potato is the English word for patate" , id: 1}]
   }
 };
 
@@ -16,7 +16,7 @@ test({
   printShortenedNotesInList: function() {
     var noteListDouble = new NoteListDouble();
     var noteListView = new NoteListView(noteListDouble);
-    assert.isTrue(noteListView.generateHTML() === "<ul><li><div>Patate is the French</div></li><li><div>Potato is the Englis</div></li></ul>")
+    assert.isTrue(noteListView.generateHTML() === "<ul><li><div><a href=\"notes/0\">Patate is the French</a></div></li><li><div><a href=\"notes/1\">Potato is the Englis</a></div></li></ul>")
   },
 
   noteListViewShorternsStringToTwentyCharacters: function() {
