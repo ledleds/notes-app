@@ -27,7 +27,7 @@ test({
 
   passingDocumentToHtml: function() {
     function dummyElement(){
-      this.innerHTML = ''
+      this.innerHTML = 'empty'
     };
 
     function NoteListDouble(){};
@@ -45,12 +45,11 @@ test({
     };
 
     var dummyElement = new dummyElement
-    var noteController = new NoteController(NoteListDouble);
+    var noteController = new NoteController();
     var noteListViewDouble = new NoteListViewDouble(NoteListDouble);
 
     noteController.createNoteListView(noteListViewDouble)
     noteController.insertHTML(dummyElement)
-
     assert.isEqual("<ul><li><div>YO</div></li></ul>", dummyElement.innerHTML)
   }
 })

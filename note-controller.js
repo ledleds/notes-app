@@ -7,7 +7,7 @@
   NoteController.prototype.createNoteListView = function(noteListView = new NoteListView(this.noteList)) {
     this.noteListView = noteListView
   };
-
+  
   NoteController.prototype.addNoteToList = function(text) {
     this.noteList.addNote(text);
   };
