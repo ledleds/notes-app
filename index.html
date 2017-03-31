@@ -6,13 +6,19 @@
 <body>
 
   <div id="app">
-    Hello
+
   </div>
+
 
   <script src="note-model.js"></script>
   <script src="note-list-model.js"></script>
   <script src="note-list-view.js"></script>
   <script src="note-controller.js"></script>
+  <script>
+    noteController = new NoteController(noteList = new NoteList());
+    noteController.addNoteToList("Patate is the French word for potato");
+    console.log(noteController)
+  </script>
 </body>
 
 </html>
