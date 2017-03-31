@@ -6,6 +6,7 @@ test({
     noteList.addNote("Bonjour")
     assert.isTrue(noteList._notes[0].text === "Hello", "Array does not include text")
     assert.isTrue(noteList._notes[1].text === "Bonjour", "Array does not include text")
+    assert.isTrue(noteList._notes[0].id === 0)
   },
 
   showsListOfNotes: function() {
