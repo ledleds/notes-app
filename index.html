@@ -18,43 +18,16 @@
   <script>
     noteController = new NoteController(noteList = new NoteList());
     noteController.addNoteToList("Patate is the French word for potato");
-    noteController.addNoteToList("Bonjour is the French word for hello");
-    noteController.addNoteToList("Ruby is the French word for Ruby");
-    noteController.addNoteToList("Soleil is the French word for sun");
+    // noteController.addNoteToList("Bonjour is the French word for hello");
+    // noteController.addNoteToList("Ruby is the French word for Ruby");
+    // noteController.addNoteToList("Soleil is the French word for sun");
 
     noteController.createNoteListView();
     noteController.insertHTML()
-    console.log(noteController)
+    // console.log(noteController)
 
-    makeUrlChangeShowNoteForCurrentPage();
+    noteController.makeUrlChangeShowNoteForCurrentPage();
 
-    // function makeNoteShowForCurrentPage() {
-    //   document
-    //     .getElementById("app")
-    //     .addEventListener("click", function(clickEvent) {
-    //       clickEvent.preventDefault();
-    //       makeUrlChangeShowNoteForCurrentPage();
-    //     })
-    // };
-
-    function makeUrlChangeShowNoteForCurrentPage() {
-        window.addEventListener("hashchange", showNoteForCurrentPage);
-      };
-
-      function showNoteForCurrentPage() {
-        showNote(getNoteFromUrl(window.location));
-      };
-
-      function getNoteFromUrl(location) {
-        return location.hash.split("#")[1];
-      };
-
-      function showNote(note) {
-        console.log(note)
-        document
-          .getElementById("note-content")
-          .innerHTML = note;
-      };
   </script>
 </body>
 
