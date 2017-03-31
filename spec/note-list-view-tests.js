@@ -7,19 +7,16 @@ NoteListDouble.prototype = {
 };
 
 test({
-  printNotesInList: function() {
-    var noteList = new NoteList();
-    noteList.addNote("Hello");
-    noteList.addNote("Goodbye");
+  // doesNotPrintListIfNoNotes: function() {
+  //   var noteList = new NoteList();
+  //   var noteListView = new NoteListView(noteList);
+  //   assert.isEqual(noteListView.generateHTML(), "<ul></ul>")
+  // },
 
-    var noteListView = new NoteListView(noteList);
-    assert.isTrue(noteListView.generateHTML() === "<ul><li><div>Hello</div></li><li><div>Goodbye</div></li></ul>")
-  },
-
-  doesNotPrintListIfNoNotes: function() {
-    var noteList = new NoteList();
-    var noteListView = new NoteListView(noteList);
-    assert.isEqual(noteListView.generateHTML(), "<ul></ul>")
+  printShortenedNotesInList: function() {
+    var noteListDouble = new NoteListDouble();
+    var noteListView = new NoteListView(noteListDouble);
+    assert.isTrue(noteListView.generateHTML() === "<ul><li><div>Patate is the French</div></li><li><div>Potato is the Englis</div></li></ul>")
   },
 
   noteListViewShorternsStringToTwentyCharacters: function() {

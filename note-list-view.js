@@ -11,8 +11,8 @@
   };
 
   NoteListView.prototype.generateHTML = function () {
-    return "<ul>" + this.noteList.viewNotes().map(function(note) {
-      return "<li><div>" + note.text + "</div></li>"
+    return "<ul>" + this.shortenToTwentyCharacters().map(function(note) {
+      return "<li><div>" + note + "</div></li>"
     }).join("") + "</ul>";
   };
 
