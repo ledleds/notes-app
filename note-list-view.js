@@ -10,5 +10,9 @@
     }).join("") + "</ul>";
   };
 
+  NoteListView.prototype.shortenToTwentyCharacters = function () {
+    return this.noteList.viewNotes().slice(0, 20)
+  };
+
   exports.NoteListView = NoteListView;
 })(this);
