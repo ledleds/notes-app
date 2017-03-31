@@ -2,7 +2,7 @@ function NoteListDouble() {};
 
 NoteListDouble.prototype = {
   viewNotes: function() {
-    return "Patate is the French word for potato!"
+    return ["Patate is the French word for potato!", "Potato is the English word for patate"]
   }
 };
 
@@ -25,6 +25,7 @@ test({
   noteListViewShorternsStringToTwentyCharacters: function() {
     var noteListDouble = new NoteListDouble();
     var noteListView = new NoteListView(noteListDouble);
-    assert.isEqual(noteListView.shortenToTwentyCharacters(), "Patate is the French")
+    assert.contains(noteListView.shortenToTwentyCharacters(), "Patate is the French")
+    assert.contains(noteListView.shortenToTwentyCharacters(), "Potato is the Englis")
   }
 });
