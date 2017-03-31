@@ -7,11 +7,11 @@ NoteListDouble.prototype = {
 };
 
 test({
-  // doesNotPrintListIfNoNotes: function() {
-  //   var noteList = new NoteList();
-  //   var noteListView = new NoteListView(noteList);
-  //   assert.isEqual(noteListView.generateHTML(), "<ul></ul>")
-  // },
+  doesNotPrintListIfNoNotes: function() {
+    var noteList = new NoteList();
+    var noteListView = new NoteListView(noteList);
+    assert.isEqual(noteListView.generateHTML(), "<ul></ul>")
+  },
 
   printShortenedNotesInList: function() {
     var noteListDouble = new NoteListDouble();
