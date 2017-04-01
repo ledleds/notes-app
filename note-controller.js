@@ -33,11 +33,11 @@
     return location.hash.split("#")[1];
   };
 
-  NoteController.prototype.showNote = function(id2) {
-    console.log(this.noteList._notes.id)
+  NoteController.prototype.showNote = function(id) {
+    console.log(this.noteList._notes)
     document
     .getElementById("note-content")
-    .innerHTML = this.noteList._notes[id2].text;
+    .innerHTML = this.noteList._notes[id].text;
   };
 
   exports.NoteController = NoteController;
