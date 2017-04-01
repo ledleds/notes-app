@@ -11,14 +11,6 @@
   };
 
   NoteListView.prototype.generateHTML = function () {
-    // str = "<ul>"
-    // allTexts = this.shortenToTwentyCharacters()
-    // for(i=0;i<allTexts.length;i++){
-    //   str += "<li><div><a href=\"#notes/" + i + "\">" + allTexts[i]  + "</a></div></li>"
-    // }
-    // str +="</ul>"
-    // return str;
-
     return "<ul>" + this.shortenToTwentyCharacters().map(function(note, id) {
       return "<li><div><a href=\"#notes/" + id + "\">" + note + "</a></div></li>"
     }).join("") + "</ul>";

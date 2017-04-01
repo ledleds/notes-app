@@ -6,10 +6,19 @@ NoteListDouble.prototype = {
   }
 };
 
+function EmptyNoteListDouble() {};
+
+EmptyNoteListDouble.prototype = {
+  viewNotes: function() {
+    return []
+  }
+};
+
 test({
   doesNotPrintListIfNoNotes: function() {
-    var noteList = new NoteList();
-    var noteListView = new NoteListView(noteList);
+
+    var emptyNoteListDouble = new EmptyNoteListDouble();
+    var noteListView = new NoteListView(emptyNoteListDouble);
     assert.isEqual(noteListView.generateHTML(), "<ul></ul>")
   },
 
