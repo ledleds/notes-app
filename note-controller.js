@@ -18,22 +18,33 @@
   };
 
   NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function() {
-    window.addEventListener("hashchange", this.showNoteForCurrentPage.bind(this));
-  };
+// addEventListener method attaches an the hashchange event. When this occurs,
+// it calls showNoteForCurrentPage function. The bind(this) is to set the this keyword
+// to the given value 'this' as the window.addEvent... takes this out of scope.
+    window.addEventListener("hashchange", this.showNoteForCurrentPage.bind(this))
+    };
 
   NoteController.prototype.showNoteForCurrentPage = function(){
+// calls showNote function with the output of (getNoteFromUrl(with the window.location))
+// as an argument. window.location is used to get the current URL.
     this.showNote(this.getNoteFromUrl(window.location));
   };
 
   NoteController.prototype.getNoteFromUrl = function(location) {
+// returns the location - the URL. Splits it at the hash which creates an array of
+// ["", "notes/0"] and returns the 1st element. ("notes/0")
     return location.hash.split("#")[1];
   };
 
-  NoteController.prototype.showNote = function(id) {
-    var noteID = location.hash.replace(/^\D+/g, '');
+  NoteController.prototype.showNote = function() {
+// Sets the var noteId to: URL, after the hash: selects the number using a regular expression.
+// So the noteID for the first note is the note object hash with text and id.
+    var noteId = location.hash.replace(/^\D+/g, '');
     document
+// gets note-content element from index.html.
       .getElementById("note-content")
-      .innerHTML = this.noteList._notes[noteID].text;
+// replaces the innerHTML with with the note text.
+      .innerHTML = this.noteList._notes[noteId].text;
   };
 
   exports.NoteController = NoteController;
