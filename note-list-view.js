@@ -20,7 +20,6 @@
     // return str;
 
     return "<ul>" + this.shortenToTwentyCharacters().map(function(note, id) {
-console.log(note)
       return "<li><div><a href=\"#notes/" + id + "\">" + note + "</a></div></li>"
     }).join("") + "</ul>";
   };
