@@ -47,5 +47,11 @@
       .innerHTML = this.noteList._notes[noteId].text;
   };
 
+  NoteController.prototype.listenForUserAddNoteSubmit = function() {
+    document.getElementById("text").addEventListener("submit", function(submitEvent) {
+      submitEvent.preventDefault();
+    });
+  };
+
   exports.NoteController = NoteController;
 })(this);

@@ -10,7 +10,7 @@
   <div id="note-content"></div>
 
   <textarea form="text" name="note" rows="4" cols="40" placeholder="Enter your note..."></textarea>
-  <form id="text" action="#notes/" method="post">
+  <form id="text" action="#notes/save" method="post">
     <input type="submit" value="Save">
   </form>
 
@@ -26,8 +26,9 @@
     noteController.addNoteToList("Ruby is the French word for Ruby");
     noteController.addNoteToList("Soleil is the French word for sun");
     noteController.createNoteListView();
-    noteController.insertHTML()
+    noteController.insertHTML();
     noteController.makeUrlChangeShowNoteForCurrentPage();
+    noteController.listenForUserAddNoteSubmit();
   </script>
 </body>
 
