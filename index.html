@@ -9,11 +9,16 @@
 
   <div id="note-content"></div>
 
+  <textarea form="text" name="note" rows="4" cols="40" placeholder="Enter your note..."></textarea>
+  <form id="text" action="#notes/" method="post">
+    <input type="submit" value="Save">
+  </form>
+
   <script src="note-model.js"></script>
   <script src="note-list-model.js"></script>
   <script src="note-list-view.js"></script>
   <script src="note-controller.js"></script>
-  
+
   <script>
     noteController = new NoteController(noteList = new NoteList());
     noteController.addNoteToList("Patate is the French word for potato");

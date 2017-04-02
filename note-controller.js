@@ -22,7 +22,7 @@
 // it calls showNoteForCurrentPage function. The bind(this) is to set the this keyword
 // to the given value 'this' as the window.addEvent... takes this out of scope.
     window.addEventListener("hashchange", this.showNoteForCurrentPage.bind(this))
-    };
+  };
 
   NoteController.prototype.showNoteForCurrentPage = function(){
 // calls showNote function with the output of (getNoteFromUrl(with the window.location))
