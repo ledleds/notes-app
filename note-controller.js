@@ -1,6 +1,6 @@
 "use strict";
 (function(exports) {
-  function NoteController(noteList) { //Should I be passing in NoteListView instead to adhere to SRP?
+  function NoteController(noteList) {
     this.noteList = noteList;
   };
 
@@ -48,9 +48,18 @@
   };
 
   NoteController.prototype.listenForUserAddNoteSubmit = function() {
+    var controller = this
     document.getElementById("text").addEventListener("submit", function(submitEvent) {
-      submitEvent.preventDefault();
+      submitEvent.preventDefault()
+      controller.saveNoteFromForm();
     });
+
+  };
+
+  NoteController.prototype.saveNoteFromForm = function() {
+    // var userNote = submitEvent.path[0].firstElementChild.value
+    var userNote = text.elements['note'].value
+    console.log(userNote)
   };
 
   exports.NoteController = NoteController;
